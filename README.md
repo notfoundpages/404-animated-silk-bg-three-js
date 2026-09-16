@@ -1,10 +1,5 @@
 <div align="center">
-    <img src="https://img.shields.io/github/deployments/ViratiAkiraNandhanReddy/404-silk-bg-three.js/github-pages?label=GitHub%20Pages&logo=github" alt="GitHub Pages" />
-    <img src="https://img.shields.io/github/repo-size/ViratiAkiraNandhanReddy/404-silk-bg-three.js" alt="Repo Size" />
-    <img src="https://api.visitorbadge.io/api/visitors?path=ViratiAkiraNandhanReddy/404-silk-bg-three.js&label=Repository%20Visits&style=flat" alt="Visits" />
-    <img src="https://img.shields.io/github/issues/ViratiAkiraNandhanReddy/404-silk-bg-three.js" alt="Issues" />
-    <img src="https://img.shields.io/github/stars/ViratiAkiraNandhanReddy/404-silk-bg-three.js?style=social" alt="Stars" />
-  <h1><a href="https://viratiakiranandhanreddy.github.io/404-silk-bg-three.js/">404-silk-bg-three.js</a></h1>
+  <h1><a href="https://notfoundpages.github.io/404-animated-silk-bg-three-js/">404-animated-silk-bg-three-js</a></h1>
   <p><em>A beautiful, responsive 404 error page featuring an animated silk-like background powered by Three.js shaders.</em></p>
 </div>
 
