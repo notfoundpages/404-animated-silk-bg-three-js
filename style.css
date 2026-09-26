@@ -16,7 +16,8 @@ Discover the full collection → https://notfoundpages.github.io
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background: #000;
@@ -72,15 +73,16 @@ canvas {
   text-decoration: none;
   font-weight: 500;
   border-radius: 6px;
-  box-shadow: 4px 4px 0 rgba(255,255,255,0.4);
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.4);
   transition: all 0.2s ease;
 }
 
 .btn-back:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.1);
+  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
 }
+
 .btn-back:focus {
   outline: 2px solid white;
   outline-offset: 2px;
@@ -88,7 +90,7 @@ canvas {
 
 .btn-back:active {
   transform: translate(0, 0);
-  box-shadow: 4px 4px 0 rgba(255,255,255,0.4);
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.4);
 }
 
 /* Reduce motion for accessibility */
@@ -96,6 +98,7 @@ canvas {
   .btn-back {
     transition: none;
   }
+
   canvas {
     animation: none;
   }
