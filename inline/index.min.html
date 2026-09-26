@@ -7,3 +7,141 @@ Live Preview → https://notfoundpages.github.io/404-animated-silk-bg-three-js
 
 Discover the full collection → https://notfoundpages.github.io
 -->
+
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><meta content="IE=edge"http-equiv=X-UA-Compatible><title>404-animated-silk-bg-three-js • notfoundpages</title><meta content="404-animated-silk-bg-three-js • notfoundpages"name=title><meta content="A beautiful animated 404 error page featuring a flowing silk background powered by Three.js, WebGL shaders, and smooth generative visuals."name=description><meta content="404 page, 404 error page, animated 404 page, silk background, animated silk background, Three.js 404, Three.js animation, WebGL 404 page, WebGL shader, GLSL shader, shader animation, generative background, animated background, interactive 404 page, creative 404 page, custom 404 page, responsive 404 page, JavaScript 404 page, HTML CSS JavaScript, Three.js, WebGL, dark 404 page, notfoundpages, Not Found Pages, NOT FOUND PAGES, NotFoundPages"name=keywords><meta content="Not Found Pages"name=author><meta content="index, follow"name=robots><meta content=English name=language><meta content=website property=og:type><meta content=https://notfoundpages.github.io/404-animated-silk-bg-three-js/ property=og:url><meta content="404-animated-silk-bg-three-js • notfoundpages"property=og:title><meta content="A beautiful animated 404 page featuring a flowing silk background powered by Three.js, WebGL shaders, and smooth generative visuals."property=og:description><meta content=https://notfoundpages.github.io/404-animated-silk-bg-three-js/assets/previews/open-graph.png property=og:image><meta content="Not Found Pages"property=og:site_name><meta content=summary_large_image name=twitter:card><meta content=https://notfoundpages.github.io/404-animated-silk-bg-three-js/ name=twitter:url><meta content="404-animated-silk-bg-three-js • notfoundpages"name=twitter:title><meta content="A beautiful animated 404 page featuring a flowing silk background powered by Three.js, WebGL shaders, and smooth generative visuals."name=twitter:description><meta content=https://notfoundpages.github.io/404-animated-silk-bg-three-js/assets/previews/open-graph.png name=twitter:image><link href=https://notfoundpages.github.io/404-animated-silk-bg-three-js/ rel=canonical><script type=application/ld+json>{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "404-animated-silk-bg-three-js",
+  "description": "A beautiful animated 404 error page featuring a flowing silk background powered by Three.js, WebGL shaders, and smooth generative visuals.",
+  "url": "https://notfoundpages.github.io/404-animated-silk-bg-three-js/",
+  "creator": {
+    "@type": "Organization",
+    "name": "Not Found Pages",
+    "url": "https://github.com/notfoundpages"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Not Found Pages",
+    "url": "https://notfoundpages.github.io/"
+  },
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Any",
+  "programmingLanguage": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "GLSL"
+  ]
+}</script><link href=https://fonts.googleapis.com rel=preconnect><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"rel=stylesheet><style>@import url(https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap);*{box-sizing:border-box;margin:0;padding:0}body,html{width:100%;height:100%;background:#000;font-family:"Stack Sans Notch",sans-serif;color:#fff;overflow:hidden}canvas{position:fixed;inset:0;z-index:0}.content{position:relative;z-index:5;height:100vh;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.error_code{font-size:clamp(6rem,22vw,18rem);font-weight:700;margin:0;color:#ffffffcc}.title{font-size:clamp(1.5rem,5vw,3rem);font-weight:700;margin:10px 0}.subtitle{font-size:clamp(1rem,3.5vw,1.4rem);opacity:.85;max-width:600px;margin-bottom:30px}.btn-back{border:1px solid #fff;padding:12px 22px;color:#fff;text-decoration:none;font-weight:500;border-radius:6px;box-shadow:4px 4px 0 rgba(255,255,255,.4);transition:all .2s ease}.btn-back:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(255,255,255,.6);background:rgba(255,255,255,.1)}.btn-back:focus{outline:2px solid #fff;outline-offset:2px}.btn-back:active{transform:translate(0,0);box-shadow:4px 4px 0 rgba(255,255,255,.4)}@media (prefers-reduced-motion:prefer-reduced){.btn-back{transition:none}canvas{animation:none}}</style><body><main class=content><h1 class=error_code>404</h1><p class=title>Oops!</p><p class=subtitle>Sorry, we couldn't locate the page you requested.<br>It might have been removed or the link may be incorrect.</p><a class=btn-back href=javascript:history.back() role=button>Back to previous page</a></main><noscript><style>.content{position:static;margin-top:20vh}.subtitle{color:#ccc}</style></noscript><script type=module>import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+  /* ================= SHADERS ================= */
+
+  const vertexShader = `
+varying vec2 vUv;
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+`;
+
+  const fragmentShader = `
+varying vec2 vUv;
+
+uniform float uTime;
+uniform vec3 uColor;
+uniform float uSpeed;
+uniform float uScale;
+uniform float uNoiseIntensity;
+
+const float e = 2.718281828459045;
+
+float noise(vec2 t) {
+  vec2 r = e * sin(e * t);
+  return fract(r.x * r.y * (1.0 + t.x));
+}
+
+void main() {
+  float rnd = noise(gl_FragCoord.xy);
+  vec2 uv = vUv * uScale;
+  float t = uSpeed * uTime;
+
+  uv.y += 0.03 * sin(8.0 * uv.x - t);
+
+  float p = 0.6 + 0.4 * sin(
+    5.0 * (uv.x + uv.y +
+    cos(3.0 * uv.x + 5.0 * uv.y) +
+    0.02 * t) +
+    sin(20.0 * (uv.x + uv.y - 0.1 * t))
+  );
+
+  vec3 col = uColor * p - rnd / 15.0 * uNoiseIntensity;
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
+
+  /* ================= SCENE ================= */
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+  camera.position.z = 1;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.domElement.style.display = 'block';
+  document.body.appendChild(renderer.domElement);
+
+  /* ================= UNIFORMS ================= */
+
+  const uniforms = {
+    uTime: { value: 0 },
+    uSpeed: { value: 0.5 },
+    uScale: { value: 1.0 },
+    uNoiseIntensity: { value: 1.5 },
+    uColor: { value: new THREE.Color() }
+  };
+
+  /* ================= MESH ================= */
+
+  scene.add(new THREE.Mesh(
+    new THREE.PlaneGeometry(2, 2),
+    new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader,
+      fragmentShader
+    })
+  ));
+
+  /* ================= ANIMATE ================= */
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    uniforms.uTime.value += 0.016;
+
+    // 🌈 AUTO COLOR CYCLE
+    const hue = (uniforms.uTime.value * 0.05) % 1;
+    uniforms.uColor.value.setHSL(hue, 0.6, 0.55);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  /* ================= RESIZE ================= */
+
+  addEventListener('resize', () => {
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  });
+
+  /* ================= ERROR HANDLING ================= */
+
+  window.addEventListener('error', (event) => {
+    console.error('Error:', event.error);
+  });
+
+  renderer.domElement.addEventListener('webglcontextlost', (event) => {
+    event.preventDefault();
+    console.warn('WebGL context lost');
+  });</script></body></html>
