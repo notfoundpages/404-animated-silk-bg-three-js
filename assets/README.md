@@ -17,7 +17,7 @@ assets/
 ## Files
 
 | File                                 | Purpose                               |
-| :----------------------------------: | :-----------------------------------: |
+| :----------------------------------- | :------------------------------------ |
 | `previews/featured-and-gallery.png`  | Featured and gallery preview          |
 | `previews/desktop.png`               | Desktop preview                       |
 | `previews/mobile.png`                | Mobile preview                        |
