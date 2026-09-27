@@ -1,118 +1,84 @@
-<div align="center">
-  <h1><a href="https://notfoundpages.github.io/404-animated-silk-bg-three-js/">404-animated-silk-bg-three-js</a></h1>
-  <p><em>A beautiful, responsive 404 error page featuring an animated silk-like background powered by Three.js shaders.</em></p>
-</div>
+<p align="center">
+  <img src="assets/previews/desktop.png" alt="404 Animated Silk Background Three.js" width="100%">
+</p>
 
----
+<h1 align="center"><a href="https://notfoundpages.github.io/404-animated-silk-bg-three-js">404-animated-silk-bg-three-js</a></h1>
 
-## Features
+<p align="center">
+  A beautiful 404 error page featuring a flowing animated silk background,
+  generative WebGL visuals, and a clean, minimal interface.
+</p>
 
-- 🎨 Smooth animated silk-like background with auto-cycling colors
-- 📱 Fully responsive design
-- ⚡ Optimized WebGL rendering
-- 🎯 Clean, modern UI
-- ♿ Accessible error messaging
+<h3 align="center">
+  <a href="https://notfoundpages.github.io/404-animated-silk-bg-three-js">Live Demo</a>
+  ·
+  <a href="https://github.com/notfoundpages/404-animated-silk-bg-three-js">Source Code</a>
+  ·
+  <a href="https://github.com/notfoundpages/404-animated-silk-bg-three-js/issues">Issues</a>
+</h3>
 
----
+## Overview
 
-## **📸 Preview**
+A 404 page doesn't have to feel like an error.
 
-### **Desktop View**
+**404 Animated Silk Background Three.js** transforms the familiar "page not found" experience into a smooth, generative visual experience. It combines a continuously animated silk-like background with a simple 404 interface, creating a subtle and immersive error page.
 
-![Desktop](preview/desktop.png)
+Built with **HTML, CSS, vanilla JavaScript, and Three.js**, the page uses WebGL shaders to generate the animated background in real time. It requires no build step and keeps the interface simple and easy to customize.
 
-### **Mobile View**
+Just copy it into your project, customize it, and give your visitors something more memorable than a standard error page.
 
-![Mobile](preview/mobile%20-%20(iPhone%2014%20Pro%20Max).png)
+## Preview
 
----
+| Desktop | Mobile |
+| ------- | ------ |
+| <img src="assets/previews/desktop.png" alt="Desktop Preview" height="435"> | <img src="assets/previews/mobile.png" alt="Mobile Preview" width="191"> |
 
-## Technologies
+<table width="100%">
+  <tr>
+    <td width="50%" align="left" valign="middle">
+      <img src="assets/previews/silk-background.gif" alt="Animated Silk Background Preview" width="100%">
+    </td>
+    <td width="50%" align="left" valign="middle">
+      The background is powered by a WebGL shader running through
+      <b>Three.js</b>. The shader generates continuously moving silk-like
+      patterns with smooth gradients, subtle noise, and an automatically
+      changing color palette.
+    </td>
+  </tr>
+</table>
 
-- **Three.js** - 3D graphics library for WebGL rendering
-- **Custom Shaders** - Fragment shader for silk-like animation effect
-- **Responsive CSS** - Flexible layout with `clamp()` for scaling
+## Quick Start
 
----
+### GitHub Pages
 
-## Browser Support
+Using it with **GitHub Pages** is simple:
 
-Requires a modern browser with WebGL support:
-- Chrome/Edge 60+
-- Firefox 55+
-- Safari 15+
+1. Rename `index.html` to `404.html`.
+2. Keep `404.html` in the **root** of your repository.
+3. If using the external version, keep `style.css` and `script.js` alongside it.
+4. Commit and push your changes.
 
----
+GitHub Pages automatically serves a root-level `404.html` when a visitor reaches a page that doesn't exist.
 
-## Usage
+### Other Hosting
 
-Deploy the files to your server and configure your 404 error page to point to `index.html`.
+For other hosting platforms, rename `index.html` to `404.html` and upload it to your website's public or root directory.
 
----
+If you're using the external version, upload `style.css` and `script.js` alongside it.
 
-## Customization
+Most hosting platforms automatically serve `404.html` for missing pages. If yours requires additional configuration, check your hosting provider's documentation for setting a custom 404 page.
 
-Edit values in `three.js` to customize:
-- `uSpeed` - Animation speed (default: 0.5)
-- `uScale` - Pattern scale (default: 1.0)
-- `uNoiseIntensity` - Noise effect strength (default: 1.5)
-- Hue cycle speed in the `animate()` function (multiply `0.05` value)
+### Inline Version
 
----
+Prefer a single file? Use either `inline/index.html` or the minified `inline/index.min.html`.
 
-## Performance
+Simply copy the contents into a new `404.html` in your repository or hosting root and you're ready to go – no external CSS, JavaScript, or assets required.
 
-- Limits device pixel ratio to 2 for better performance
-- Uses OrthographicCamera for efficient 2D rendering
-- Antialiasing enabled for smooth visuals
 
----
+<p align="center">
+  <strong>Made with ❤️ by <a href="https://notfoundpages.github.io">Not Found Pages</a></strong>
+</p>
 
-## **🤝 Contributing**
-
-Pull requests are welcome!
-
-To contribute:
-
-1. Fork the repository
-2. Create a new branch
-3. Add your changes
-4. Open a PR
-
----
-
-## ⭐ Support
-<kbd>If you like this project, consider giving it a star ⭐ on GitHub — it helps a lot.</kbd>
-
----
-
-## 🌐 Social & Links
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/viratiakiranandhanreddy/)
-[![X](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Viratiaki53)
-[![Instagram](https://img.shields.io/badge/Instagram-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/viratiaki53)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/ViratiAkiraNandhanReddy)
-[![Gist](https://img.shields.io/badge/Gist-2b3137?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/ViratiAkiraNandhanReddy)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@ViratiAkiraNandhanReddy)
-[![Website](https://img.shields.io/badge/Website-0077b6?style=for-the-badge&logoColor=white)](https://viratiakiranandhanreddy.github.io/CaesarCipher.extended/)
-[![Mail](https://img.shields.io/badge/Mail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact.viratiakiranandhanreddy+github@gmail.com)
-
----
-
-## 📝 License
-
-<p align="center"><kbd>&copy; 2025 <a href="https://github.com/ViratiAkiraNandhanReddy">ViratiAkiraNandhanReddy</a>. This project is licensed under the <i>MIT License</i>.</kbd></p>
-
----
-
-## 👤 Author
-
-### Developed by [ViratiAkiraNandhanReddy](https://github.com/ViratiAkiraNandhanReddy)
-
-> 💤 - PASSIVE MAINTENANCE : Mean the project is no longer actively developed ***( NO New Features And Regular Updates )***, but the maintainer will respond only when an issue or PR is raised. Feel free to fork and continue development!
-
----
-
-<h3 align="center"> 🌟 Questions, suggestions, or want to contribute? Open an issue or pull request on GitHub! 🌟 </h3>
-
-<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0e8fff&height=100&section=footer" width="100%" /> </p>
+<p align="center">
+  <sub>Give your visitors something better than a dead end.</sub>
+</p>
